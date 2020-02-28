@@ -1,7 +1,6 @@
 import  React from 'react'
 import Update from './Update'
 import { Box, Image } from '@chakra-ui/core'
-import axios from 'axios'
 
 class Profile extends React.Component{
   constructor(){

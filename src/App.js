@@ -22,7 +22,26 @@ class App extends React.Component {
     }
   }
 
+  getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position)=>{
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+        axios.put('/api/user/location',{coordinates: [long, lat]},{headers: {"authorization":localStorage.token}})
+        .then(res => console.log(res.data))
+        .catch(error => console.log(error), 'post location')
+      })
+    } }
+
+    queryLocation = () => {
+      axios.get('/api/user/location',{headers: {"authorization":localStorage.token}})
+      .then(res => console.log(res.data, 'query'))
+      .catch(error => console.log(error))
+    }
+
   componentDidMount(){
+    this.getLocation()
+    this.queryLocation()
     axios.get('/api/user', {headers: {"authorization":localStorage.token}})
     .then(res => {
       this.setState({user:res.data.user}
