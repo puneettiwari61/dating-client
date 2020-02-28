@@ -7,7 +7,9 @@ import {
   Input,
   Box,
   Button,
-  Text
+  Text,
+  Image,
+  Flex
 } from "@chakra-ui/core";
 
 import axios from 'axios'
@@ -45,6 +47,11 @@ import axios from 'axios'
   render() {
   return (
     <>
+      <Flex justify='space-between'>
+        <Box d='flex' justifyContent='center' alignItems='center' >
+            <Image src="girl2.jpg"  />
+        </Box>
+
     <form action="">
       <Box d='flex' justifyContent='center' alignItems="center" mt='20' >
         <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden" p='6'd='flex' justifyContent='center' alignItems="center" flexDirection='column' >
@@ -77,6 +84,10 @@ import axios from 'axios'
         </Box>
       </Box>
       </form>
+      <Box d='flex' justifyContent='center' alignItems='center' >
+            <Image src="boy.jpg"  width='390px' />
+        </Box>
+      </Flex>
     </>
   )}
 }

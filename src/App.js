@@ -8,6 +8,9 @@ import Home from '../src/components/home/Home'
 import LoginForm from './components/forms/LoginForm'
 import Main from './components/main/Main'
 import axios from 'axios'
+import Profile from './components/main/Profile'
+
+import CreateT from './components/thoughts/CreateT'
 
 class App extends React.Component {
 
@@ -35,6 +38,16 @@ class App extends React.Component {
   handleLogout = () => {
     this.setState({isLogged:false})
   }
+  updateImage = (url) => {
+    this.setState(state => {
+      return {
+        user:{
+          ...state.user,
+          image: url
+        }
+      }
+    })
+  }
 
 publicRoutes = () => {
   return <>
@@ -55,10 +68,17 @@ protectedRoutes = () => {
   return <>
   <Route path='/' exact>
   <Home />
-</Route><Route path='/user'>
+  </Route>
+  <Route path='/user'>
   <Main user={this.state.user} />
   </Route>
-  </>
+  <Route path='/profile'>
+  <Profile user={this.state.user} updateImage={this.updateImage} />
+  </Route>
+    <Route path='/thoughts'>
+    <CreateT user={this.state.user} />
+    </Route>
+    </>  
 
 }
   render(){

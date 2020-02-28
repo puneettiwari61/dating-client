@@ -64,7 +64,7 @@ function Login(props) {
       }}
     >
       {props => (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit}  style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
           <Field name="email" validate={validateEmail}>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.email && form.touched.email} mt='5'>

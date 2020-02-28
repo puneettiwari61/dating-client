@@ -3,8 +3,8 @@ import { Box, Image } from '@chakra-ui/core'
 
 function Home(){
   return (
-    <Box position="absolute" top='50%' left='50%' >
-        <Image src="/images/q1.jpg" alt="Segun Adebayo" />
+    <Box d='flex' justifyContent='center' alignItems='center' mt='20'>
+      <Image src='g2.gif' />
     </Box>
 
     )

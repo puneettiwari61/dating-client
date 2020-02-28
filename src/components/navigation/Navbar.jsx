@@ -11,7 +11,7 @@ const handleLogout = (logout) => {
 
 function Navbar(props) {
   return (
-    <Flex align="center" justify="space-between" bg="pink.100">
+    <Flex align="center" justify="space-between" bg="pink.200">
       <Flex>
         <Text p='6' fontSize='3xl'>
           <NavLink to='/' exact activeStyle={{ textDecoration: "underline" }}>Home</NavLink>
@@ -20,7 +20,7 @@ function Navbar(props) {
       <Box d="flex" justifyContent="space-around" width='30%'>
         <Flex>
           <Text fontSize='3xl'>
-            {!props.isLogged? <NavLink to='/signup' exact activeStyle={{ textDecoration: "underline" }}>Signup</NavLink> : <NavLink to='/profile' exact activeStyle={{ textDecoration: "underline" }}>Profile</NavLink>} 
+            {!props.isLogged? <NavLink to='/signup' exact activeStyle={{ textDecoration: "underline" }}>Register</NavLink> : <NavLink to='/profile' exact activeStyle={{ textDecoration: "underline" }}>Profile</NavLink>} 
           </Text>
         </Flex>
         <Flex>
