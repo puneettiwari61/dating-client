@@ -30,7 +30,7 @@ import axios from 'axios'
  handleClick = (event) => {
    event.preventDefault()
    let {name, email, password} = this.state
-  axios.post("/api/signup",
+  axios.post( "/api/signup",
   {name, email, password}
   ).then(res => {
     if(res.data.success){

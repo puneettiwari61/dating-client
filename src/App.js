@@ -9,8 +9,16 @@ import LoginForm from './components/forms/LoginForm'
 import Main from './components/main/Main'
 import axios from 'axios'
 import Profile from './components/main/Profile'
+// import socketIOClient from "socket.io-client";
+// import io from 'socket.io-client';
+
+
+
 
 import CreateT from './components/thoughts/CreateT'
+
+
+
 
 class App extends React.Component {
 
@@ -32,7 +40,7 @@ class App extends React.Component {
         .catch(error => console.log(error), 'post location')
       })
     } }
-
+  // "proxy": "http://localhost:3001",
     queryLocation = () => {
       axios.get('/api/user/location',{headers: {"authorization":localStorage.token}})
       .then(res => console.log(res.data, 'query'))
@@ -40,6 +48,7 @@ class App extends React.Component {
     }
 
   componentDidMount(){
+    // console.log(process.env.SERVER)
     this.getLocation()
     this.queryLocation()
     axios.get('/api/user', {headers: {"authorization":localStorage.token}})
